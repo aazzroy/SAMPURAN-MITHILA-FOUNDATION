@@ -48,6 +48,42 @@
     </div>
     <div class="nav_heading">
       <h3>सम्पूर्ण मिथिला फाउंडेशन </h3>
+      <style>.nav_heading h3 {
+        position: relative; 
+        padding: 10px 0;
+      }
+
+      .nav_heading h3::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%; 
+        transform: translateY(-50%); 
+        background: url('webimg/ashok\ stambh.png') no-repeat;
+        background-size: 26px; 
+        width: 47px; 
+        height: 47px;
+        margin-right: -54px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .nav_heading h3::after {
+          width: 47px; 
+          height: 47px; 
+          background-size: 26px; 
+          margin-right: -58px; 
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav_heading h3::after {
+          width: 47px; 
+          height: 47px; 
+          background-size: 26px; 
+          margin-right: 5px;  
+        }
+      }</style>
     </div>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" id="close-btn" class="closebtn menu" onclick="closeNav()"><i class="fa fa-times"

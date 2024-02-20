@@ -23,34 +23,34 @@
         </div>
         <form action="#" method="post" id="contact_form">
           <div class="name">
-            <label for="name"></label>
-            <input type="text" placeholder="My name is" name="name" id="name_input" required>
+              <label for="name"></label>
+              <input type="text" placeholder="My name is" name="name" id="name_input" required>
           </div>
           <div class="email">
-            <label for="email"></label>
-            <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+              <label for="email"></label>
+              <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
           </div>
           <div class="telephone">
-            <label for="name"></label>
-            <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+              <label for="name"></label>
+              <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
           </div>
           <div class="subject">
-            <label for="subject"></label>
-            <select placeholder="Subject line" name="subject" id="subject_input" required>
-              <option disabled hidden selected>Subject line</option>
-              <option>I'd like to start a project</option>
-              <option>I'd like to ask a question</option>
-              <option>I'd like to make a proposal</option>
-            </select>
+              <label for="subject"></label>
+              <select placeholder="Subject line" name="subject" id="subject_input" required>
+                  <option disabled hidden selected>Subject line</option>
+                  <option>I'd like to start a project</option>
+                  <option>I'd like to ask a question</option>
+                  <option>I'd like to make a proposal</option>
+              </select>
           </div>
           <div class="message">
-            <label for="message"></label>
-            <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
+              <label for="message"></label>
+              <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
           </div>
           <div class="submit">
-            <input type="submit" value="Send Message" id="form_button" />
+              <input type="submit" value="Send Message" id="form_button" />
           </div>
-        </form><!-- // End form -->
+      </form><!-- // End form --><!-- // End form -->
       </div><!-- // End #container -->
 
 
@@ -80,6 +80,48 @@
             .then(html => {
                 document.getElementById('footer').innerHTML = html;
             });
+
+        // Function to handle form submission
+        document.getElementById('contact_form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get form data
+            var formData = {
+                name: document.getElementById('name_input').value,
+                email: document.getElementById('email_input').value,
+                telephone: document.getElementById('telephone_input').value,
+                subject: document.getElementById('subject_input').value,
+                message: document.getElementById('message_input').value
+            };
+
+            // Convert form data to JSON
+            var jsonData = JSON.stringify(formData);
+
+            // Send form data to webhook
+            fetch('https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTY4MDYzMDA0M2M1MjY4NTUzNjUxMzci_pc', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: jsonData
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Form data sent successfully');
+                    // Optionally, you can redirect the user or show a success message here
+                } else {
+                    console.error('Error sending form data:', response.statusText);
+                    // Optionally, you can show an error message to the user here
+                }
+            })
+            .catch(error => {
+                console.error('Error sending form data:', error);
+                // Optionally, you can show an error message to the user here
+            });
+        });
+
+
+            
     </script>
 </body>
 </html>
