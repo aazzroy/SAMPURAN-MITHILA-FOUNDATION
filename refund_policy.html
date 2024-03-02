@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/donation.css" />
+    <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+<style>
+    p {
+        color: black !important;
+    }
+</style>
+
+
+
+
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <h3>Refund Policy</h3>
+    <div class="refund-policy">
+       
+        <p>SAMPURAN MITHILA FOUNDATION is instituting a donation refund policy to ensure fair and transparent processing of requests for refund of donations as digital payments are becoming more frequent. SAMPURAN MITHILA FOUNDATION expects that all donors will exercise due care and diligence while making donations. SAMPURAN MITHILA FOUNDATION also recognises that a donation may be made erroneously or donors may change their mind.</p>
+        <p>SAMPURAN MITHILA FOUNDATION will examine each request for refund of donation and endeavour to make the refund. SAMPURAN MITHILA FOUNDATION may also seek further information / documents and donor must co-operate in this regard.</p>
+        <p>However, SAMPURAN MITHILA FOUNDATION is not obliged to make refunds and may, in its discretion, decline any requests for refund of donations, particularly if a tax exemption certificate has been issued.</p>
+        <p>If you would like your donation to SAMPURAN MITHILA FOUNDATION to be refunded, you must request SAMPURAN MITHILA FOUNDATION in writing or by email for a refund and your request must reach SAMPURAN MITHILA FOUNDATION within 15 (fifteen) days from the date on which you made the donation i.e. the date on which you:</p>
+        <ul>
+            <li>Made the donation online, electronically or through other means, OR</li>
+            <li>Handed over the cheque / demand draft to SAMPURAN MITHILA FOUNDATION or someone authorised by SAMPURAN MITHILA FOUNDATION for this purpose, OR</li>
+            <li>Despatched the cheque / demand draft to SAMPURAN MITHILA FOUNDATION by other means.</li>
+        </ul>
+        <p>The written request stating reason for requesting refund must be sent to the address stated below and must contain all the following details pertaining to the donation:</p>
+        <ul>
+            <li>Date of donation</li>
+            <li>Donation amount</li>
+            <li>If donation was made through cheque/draft, please provide Cheque/Draft no.</li>
+            <li>If donation was made through credit card, please provide Credit Card no. (last 4 digits only).</li>
+            <li>If donation was made online, please provide Donation-ID.</li>
+        </ul>
+    <div class="contact-details">
+        <h3>Contact Details</h3>
+        <p>Address: Madhubani, Sapta, Bihar, INDIA</p>
+        <p>Email: <a href="mailto:care@SampuranMithila.com">care@SampuranMithila.com</a></p>
+        <p>Phone: <a href="tel:+917667280664">+91 7667280664</a></p>
+    </div>
+
+
+
+
+        
+    </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Fetch header content
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
+
+        // Fetch footer content
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

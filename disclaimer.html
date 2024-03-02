@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/donation.css" />
+    <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+<style>
+    p {
+        color: black !important;
+    }
+</style>
+
+
+
+
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container">
+        
+        <h3>Disclaimer for SAMPURAN MITHILA FOUNDATION</h3>
+        <p>If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at care@sampuranmithila.com. </p>
+
+        <h2>Disclaimers for sampuranmithila.com</h2>
+        <p>All the information on this website - sampuranmithila.com - is published in good faith and for general information purpose only. sampuranmithila.com does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (sampuranmithila.com), is strictly at your own risk. sampuranmithila.com will not be liable for any losses and/or damages
+        
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Fetch header content
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
+
+        // Fetch footer content
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
