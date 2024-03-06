@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letterhead</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 21cm; /* A4 width */
+            height: 29.7cm; /* A4 height */
+            padding: 2cm; /* Adjust padding as needed */
+            box-sizing: border-box;
+            border: 1px solid #000; /* Add border if necessary */
+            background-image: url('webimg/orig.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .content {
+            line-height: 1.6;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0); /* Semi-transparent white background */
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-style: italic;
+            color: rgb(1, 1, 1); /* Ensures text is visible over the background image */
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer p {
+            margin: 0;
+        }
+        .print-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .letter-content {
+            border: none;
+            width: 100%;
+            background-color: transparent;
+            resize: none;
+            font-size: 16px;
+            line-height: 1.5;
+            outline: none;
+            color: #000000;
+        }
+        .date {
+            margin-top: 145px; /* Adjust the margin as needed */
+        }
+        .print-footer {
+            display: none; /* Initially hidden; will be displayed during print */
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="content">
+            <p class="date">Date: <span id="date" contenteditable="true" onclick="removePlaceholder(this)">[Date]</span></p>
+            <p>Dear <span contenteditable="true">[Recipient's Name]</span>,</p>
+            <p><span id="letterContent" contenteditable="true" onclick="removePlaceholder(this)">Enter your letter content here</span></p>
+        </div>
+        <div class="footer">
+            <div>
+                <p>Sincerely,</p>
+                <p>Gaurav Kumar</p>
+                <p>Director</p>
+                <p>Sampuran Mithila Foundation</p>
+            </div>
+            <button class="print-button" id="printButton" onclick="prepareAndPrint()">Print</button>
+        </div>
+    </div>
+    <div class="print-footer" id="printFooter">
+        Printed on: <span id="printDate"></span> | Page URL: <span id="pageURL"></span>
+    </div>
+
+    <script>
+        function prepareAndPrint() {
+            var content = document.getElementById('letterContent');
+            var placeholder = content.getAttribute('placeholder');
+            if (content.innerHTML === placeholder) {
+                content.innerHTML = '';
+            }
+            document.getElementById('printButton').style.display = 'none'; // Hide the print button
+            document.getElementById('printFooter').style.display = 'block'; // Show the print footer
+            document.getElementById('printDate').innerHTML = new Date().toLocaleString(); // Show current date and time
+            document.getElementById('pageURL').innerHTML = window.location.href; // Show current page URL
+            window.print();
+            window.location.reload(); // Reload the page to reset changes made for printing
+        }
+
+        function removePlaceholder(element) {
+            var placeholder = element.getAttribute('placeholder');
+            if (element.innerHTML === placeholder) {
+                element.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
+

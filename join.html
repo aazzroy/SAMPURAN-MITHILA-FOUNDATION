@@ -16,10 +16,49 @@
 <body>
     <div id="header"></div>
 
-    <script src="https://www.cognitoforms.com/f/seamless.js" data-key="VG6GGsdoW02OU3fmjC4cVQ" data-form="1"></script>
+    <div class="members-tree">
+        <h2>Members of Pubitzhod</h2>
+        <ul class="member-list">
+            <li>
+                <span class="member-name">John Doe</span> - <span class="member-role">Root</span>
+                <ul>
+                    <li>
+                        <span class="member-name">Jane Smith</span> - <span class="member-role">Branch</span>
+                        <ul>
+                            <li><span class="member-name">Emily Johnson</span> - <span class="member-role">Leaf</span></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="member-name">Michael Brown</span> - <span class="member-role">Branch</span>
+                        <ul>
+                            <li><span class="member-name">Sarah Davis</span> - <span class="member-role">Leaf</span></li>
+                            <li><span class="member-name">James Wilson</span> - <span class="member-role">Leaf</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <style>
+        .members-tree {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .member-list, .member-list ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .member-name {
+            font-weight: bold;
+        }
+        .member-role {
+            font-style: italic;
+        }
+    </style>
+
+
 
     
-    <script src="js/join.js"></script>
     <div id="footer"></div>
 
     <script>
